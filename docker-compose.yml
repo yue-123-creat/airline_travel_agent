@@ -1,0 +1,68 @@
+# 项目名会出现在 Docker Desktop 中（不再显示 travel-qa-*）
+name: airline_travel_agent
+
+services:
+  api:
+    container_name: airline_travel_agent-api
+    build: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      DATABASE_URL: postgresql://qa:qa@postgres:5432/travel_qa
+      QDRANT_URL: http://qdrant:6333
+      QWEN_CHAT_MODEL: qwen-flash
+    depends_on:
+      redis:
+        condition: service_started
+      postgres:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+    volumes:
+      - ./app:/app/app
+      - ./contracts:/app/contracts
+      - ./data:/app/data
+      # knowledge JSON mounted for P1 travel retrieval；静态会话页随 app/static 挂载
+
+  redis:
+    container_name: airline_travel_agent-redis
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  postgres:
+    container_name: airline_travel_agent-postgres
+    # 本地用 DaoCloud/轩辕拉完后 tag 为 postgres:15-alpine；上云同样用此官方名
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: qa
+      POSTGRES_PASSWORD: qa
+      POSTGRES_DB: travel_qa
+    ports:
+      - "5432:5432"
+    volumes:
+      - airline_travel_agent_pgdata:/var/lib/postgresql/data
+      - ./scripts/init_db.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U qa -d travel_qa"]
+      interval: 3s
+      timeout: 5s
+      retries: 10
+
+  # P2 向量库：travel_rag / aviation_rag 分 Collection 隔离
+  qdrant:
+    container_name: airline_travel_agent-qdrant
+    # 本机已有 v1.13.2；升到 v1.20.0 会重新拉镜像，需要时再改
+    image: qdrant/qdrant:v1.13.2
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - airline_travel_agent_qdrant:/qdrant/storage
+
+volumes:
+  airline_travel_agent_pgdata:
+  airline_travel_agent_qdrant:

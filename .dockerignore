@@ -1,0 +1,39 @@
+# 密钥 / 本地环境：绝不能进 build context 和镜像
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# 版本控制 / 编辑器
+.git
+.gitignore
+.idea
+.vscode
+
+# Python 缓存与虚拟环境
+.venv
+venv
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+
+# 仅本地开发与测试使用
+tests/
+docs/
+.pytest_cache/
+*.log
+*.bak
+Dockerfile
+docker-compose*.yml
+
+# 运行时产物（镜像内只需 data/knowledge，其余由 prod compose 挂载 ./data 提供）
+data/logs/
+data/app.db
+data/ltm_mock.json
+
+# 注意：不要排除 data/knowledge/ 下任何文件。
+# Dockerfile 会 COPY data/knowledge；scripts/ingest_* 也依赖其中的中间产物，
+# 若将来需要在容器内重灌 RAG，排除后会导致镜像缺文件。

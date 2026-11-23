@@ -1,0 +1,140 @@
+# 生产编排：与开发用 docker-compose.yml 并存，互不覆盖。
+# 启动： docker compose -f docker-compose.prod.yml up -d --build
+# 停止： docker compose -f docker-compose.prod.yml down          （数据卷不会被删除）
+# 查看： docker compose -f docker-compose.prod.yml ps / logs -f api
+#
+# 与开发版的关键差异：
+#   1. restart: unless-stopped —— 容器崩溃 / 宿主机重启后自动拉起
+#   2. 只把 api 的 8080 绑到 127.0.0.1，由宿主机 Nginx 反代 443；
+#      redis / postgres / qdrant 完全不映射宿主机端口
+#   3. 去掉 ./app、./contracts 源码热挂载 —— 镜像自包含，改代码必须重新 build
+#   4. Redis 开启 AOF + 独立数据卷（否则重启后配额与 reserve 预占全丢）
+#   5. redis / postgres 用 service_healthy 门控，api 自带 healthcheck
+#   6. 数据库凭据由 .env 的 POSTGRES_PASSWORD 统一派生，避免 DATABASE_URL 与 PG 密码不一致
+#   7. 日志轮转 + CPU / 内存上限，防止单个 LLM 长请求拖垮宿主机
+#
+# 上线前必须在 .env 中设置 POSTGRES_PASSWORD（强口令），否则 compose 会直接报错拒绝启动。
+
+name: airline_travel_agent
+
+services:
+  api:
+    container_name: airline_travel_agent-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:8080"
+    env_file:
+      - .env
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      DATABASE_URL: postgresql://${POSTGRES_USER:-qa}:${POSTGRES_PASSWORD:?请在 .env 设置 POSTGRES_PASSWORD 强口令}@postgres:5432/${POSTGRES_DB:-travel_qa}
+      QDRANT_URL: http://qdrant:6333
+      QWEN_CHAT_MODEL: qwen-flash
+      AUTH_MODE: ${AUTH_MODE:?请在 .env 显式设置 AUTH_MODE（生产环境禁止留空）}
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      qdrant:
+        # api 启动时不会主动连 Qdrant（app/rag/search.py 首次检索才建连），
+        # 且 qdrant 镜像内不保证有 curl/wget，故不加 healthcheck，避免假失败。
+        condition: service_started
+    volumes:
+      # 保留 ./data：knowledge 静态库 + 运行时 logs/*.jsonl + ltm_mock.json。
+      # 备份与回滚 = 备份整个 ./data 目录 + 下面三个命名卷。
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    logging:
+      driver: json-file
+      options:
+        max-size: "20m"
+        max-file: "5"
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 2G
+        reservations:
+          memory: 512M
+
+  redis:
+    container_name: airline_travel_agent-redis
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes", "--appendfsync", "everysec"]
+    volumes:
+      - airline_travel_agent_redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+
+  postgres:
+    container_name: airline_travel_agent-postgres
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-qa}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?请在 .env 设置 POSTGRES_PASSWORD 强口令}
+      POSTGRES_DB: ${POSTGRES_DB:-travel_qa}
+    volumes:
+      - airline_travel_agent_pgdata:/var/lib/postgresql/data
+      - ./scripts/init_db.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-qa} -d ${POSTGRES_DB:-travel_qa}"]
+      interval: 3s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1G
+
+  qdrant:
+    container_name: airline_travel_agent-qdrant
+    image: qdrant/qdrant:v1.13.2
+    restart: unless-stopped
+    volumes:
+      - airline_travel_agent_qdrant:/qdrant/storage
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1G
+
+volumes:
+  airline_travel_agent_pgdata:
+  airline_travel_agent_qdrant:
+  airline_travel_agent_redisdata:

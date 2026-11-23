@@ -1,0 +1,200 @@
+[
+  {
+    "name": "上海科技馆",
+    "ok": true,
+    "amap_poi_name": "上海科技馆",
+    "amap_poi_id": "B00150C4B6",
+    "photo_count": 3,
+    "photos": [
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/6b9d8ad6ba07cfe9e718aa02062f74f8"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/40c243549930271572afd113c212fd69"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/8fa69f1a08c1b465353c9b4b134373e8"
+      }
+    ],
+    "local_file": "d:\\Projects\\airline_travel_agent\\data\\knowledge\\amap_photos_shanghai\\上海科技馆.jpg"
+  },
+  {
+    "name": "上海野生动物园",
+    "ok": true,
+    "amap_poi_name": "上海野生动物园",
+    "amap_poi_id": "B00152F15F",
+    "photo_count": 3,
+    "photos": [
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/3b2df279d343009a458cc09efc0d6439"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/ab0d73779e656b4479a6e95d00eaa90f"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/5e23ddff357573af3a0714fe0cdfeb47"
+      }
+    ],
+    "local_file": "d:\\Projects\\airline_travel_agent\\data\\knowledge\\amap_photos_shanghai\\上海野生动物园.png"
+  },
+  {
+    "name": "东方明珠广播电视塔",
+    "ok": true,
+    "amap_poi_name": "东方明珠广播电视塔",
+    "amap_poi_id": "B00150F6D6",
+    "photo_count": 3,
+    "photos": [
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/797bc3a3aa5722ea6c6f867929f80777"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/311209b13c3e95d3772b13db68a1f50c"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/3f1c20fe363c2ed628733393c0f9d7c0"
+      }
+    ],
+    "local_file": "d:\\Projects\\airline_travel_agent\\data\\knowledge\\amap_photos_shanghai\\东方明珠广播电视塔.jpg"
+  },
+  {
+    "name": "中国共产党一大•二大•四大纪念馆景区",
+    "ok": true,
+    "amap_poi_name": "中共四大纪念馆",
+    "amap_poi_id": "B00156GXQ1",
+    "photo_count": 3,
+    "photos": [
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/2efc2acf9b868aa4a2611eef44ec0010"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/1c151e9d18ee0668dd05ebe51db4e1a7"
+      },
+      {
+        "title": null,
+        "url": "https://store.is.autonavi.com/showpic/c2394a30b3323b1e8cbd607b8063f752"
+      }
+    ],
+    "local_file": "d:\\Projects\\airline_travel_agent\\data\\knowledge\\amap_photos_shanghai\\中国共产党一大_二大_四大纪念馆景区.jpg"
+  },
+  {
+    "name": "外滩",
+    "ok": true,
+    "amap_poi_name": "外滩",
+    "amap_poi_id": "B00155FXB3",
+    "photo_count": 3,
+    "photos": [
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/b9c402b7d34ea98654cc915e567761dd"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/979602e27511b1d60f296d840bcfdbb6"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/619751b016fe3cb5c1c90b9a771ca444"
+      }
+    ],
+    "local_file": "d:\\Projects\\airline_travel_agent\\data\\knowledge\\amap_photos_shanghai\\外滩.jpg"
+  },
+  {
+    "name": "西沙明珠湖景区",
+    "ok": true,
+    "amap_poi_name": "西沙明珠湖景区",
+    "amap_poi_id": "B00155R3U3",
+    "photo_count": 3,
+    "photos": [
+      {
+        "title": "秋季",
+        "url": "http://store.is.autonavi.com/showpic/83bae8d4ff982a209312d7ad380094c4"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/42eb2ee6c20c3bf008f731b993d0b3d2"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/865e81fd64569d957c658f9131c0a976"
+      }
+    ],
+    "local_file": "d:\\Projects\\airline_travel_agent\\data\\knowledge\\amap_photos_shanghai\\西沙明珠湖景区.jpg"
+  },
+  {
+    "name": "豫园",
+    "ok": true,
+    "amap_poi_name": "上海豫园",
+    "amap_poi_id": "B00155MF55",
+    "photo_count": 3,
+    "photos": [
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/faeb0264854cd82fbb315cb2ccacea0f"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/a1ae7c02fc36b06b55307525ce4d692c"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/64f950cea19a60bbca1cdfa056a0d2a1"
+      }
+    ],
+    "local_file": "d:\\Projects\\airline_travel_agent\\data\\knowledge\\amap_photos_shanghai\\豫园.jpg"
+  },
+  {
+    "name": "上海迪士尼度假区",
+    "ok": true,
+    "amap_poi_name": "上海迪士尼度假区",
+    "amap_poi_id": "B00157AW8O",
+    "photo_count": 3,
+    "photos": [
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/4f83bd890aba5ab4f0d859e5e25a94f7"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/b8f22033d9f27ce6ecc2717f59ce984e"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/31b82e6ecf4d928a3278981307baf6da"
+      }
+    ],
+    "local_file": "d:\\Projects\\airline_travel_agent\\data\\knowledge\\amap_photos_shanghai\\上海迪士尼度假区.png"
+  },
+  {
+    "name": "朱家角古镇",
+    "ok": true,
+    "amap_poi_name": "上海朱家角古镇旅游区",
+    "amap_poi_id": "B001558F5I",
+    "photo_count": 3,
+    "photos": [
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/a617a73f40f366c74a6b733d8a78636d"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/81bbfce5fcfab80856ce16b29acd09a7"
+      },
+      {
+        "title": null,
+        "url": "http://store.is.autonavi.com/showpic/10a4c06e7102d5e8d0fb04ba7acc6315"
+      }
+    ],
+    "local_file": "d:\\Projects\\airline_travel_agent\\data\\knowledge\\amap_photos_shanghai\\朱家角古镇.jpg"
+  }
+]

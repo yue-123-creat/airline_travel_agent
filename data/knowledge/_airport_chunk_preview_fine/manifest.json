@@ -1,0 +1,518 @@
+{
+  "chunk_size": 512,
+  "chunk_overlap": 64,
+  "note": "按 RAG 细切预览，未灌库；类文本未做 6500 截断",
+  "airports": {
+    "WNZ": {
+      "slug": "wnz",
+      "category_chars": {
+        "transport": 2394,
+        "navigation": 5148,
+        "checkin": 3394,
+        "facility": 2274,
+        "lounge": 2979,
+        "emergency": 2182
+      },
+      "chunks": 43,
+      "by_category": {
+        "transport": 6,
+        "navigation": 12,
+        "checkin": 8,
+        "facility": 5,
+        "lounge": 7,
+        "emergency": 5
+      },
+      "items": [
+        {
+          "chunk_id": "chunk_wnz_01_transport",
+          "category": "transport",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_02_transport",
+          "category": "transport",
+          "chars": 511
+        },
+        {
+          "chunk_id": "chunk_wnz_03_transport",
+          "category": "transport",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_04_transport",
+          "category": "transport",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_05_transport",
+          "category": "transport",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_06_transport",
+          "category": "transport",
+          "chars": 154
+        },
+        {
+          "chunk_id": "chunk_wnz_07_navigation",
+          "category": "navigation",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_08_navigation",
+          "category": "navigation",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_09_navigation",
+          "category": "navigation",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_10_navigation",
+          "category": "navigation",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_11_navigation",
+          "category": "navigation",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_12_navigation",
+          "category": "navigation",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_13_navigation",
+          "category": "navigation",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_14_navigation",
+          "category": "navigation",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_15_navigation",
+          "category": "navigation",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_16_navigation",
+          "category": "navigation",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_17_navigation",
+          "category": "navigation",
+          "chars": 511
+        },
+        {
+          "chunk_id": "chunk_wnz_18_navigation",
+          "category": "navigation",
+          "chars": 220
+        },
+        {
+          "chunk_id": "chunk_wnz_19_checkin",
+          "category": "checkin",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_20_checkin",
+          "category": "checkin",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_21_checkin",
+          "category": "checkin",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_22_checkin",
+          "category": "checkin",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_23_checkin",
+          "category": "checkin",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_24_checkin",
+          "category": "checkin",
+          "chars": 511
+        },
+        {
+          "chunk_id": "chunk_wnz_25_checkin",
+          "category": "checkin",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_26_checkin",
+          "category": "checkin",
+          "chars": 258
+        },
+        {
+          "chunk_id": "chunk_wnz_27_facility",
+          "category": "facility",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_28_facility",
+          "category": "facility",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_29_facility",
+          "category": "facility",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_30_facility",
+          "category": "facility",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_31_facility",
+          "category": "facility",
+          "chars": 482
+        },
+        {
+          "chunk_id": "chunk_wnz_32_lounge",
+          "category": "lounge",
+          "chars": 511
+        },
+        {
+          "chunk_id": "chunk_wnz_33_lounge",
+          "category": "lounge",
+          "chars": 511
+        },
+        {
+          "chunk_id": "chunk_wnz_34_lounge",
+          "category": "lounge",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_35_lounge",
+          "category": "lounge",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_36_lounge",
+          "category": "lounge",
+          "chars": 510
+        },
+        {
+          "chunk_id": "chunk_wnz_37_lounge",
+          "category": "lounge",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_38_lounge",
+          "category": "lounge",
+          "chars": 291
+        },
+        {
+          "chunk_id": "chunk_wnz_39_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_40_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_41_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_42_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_wnz_43_emergency",
+          "category": "emergency",
+          "chars": 390
+        }
+      ]
+    },
+    "LJG": {
+      "slug": "ljg",
+      "category_chars": {
+        "transport": 1947,
+        "navigation": 2574,
+        "checkin": 4686,
+        "facility": 1460,
+        "lounge": 3875,
+        "emergency": 5904,
+        "policy": 320
+      },
+      "chunks": 50,
+      "by_category": {
+        "transport": 5,
+        "navigation": 6,
+        "checkin": 11,
+        "facility": 4,
+        "lounge": 9,
+        "emergency": 14,
+        "policy": 1
+      },
+      "items": [
+        {
+          "chunk_id": "chunk_ljg_01_transport",
+          "category": "transport",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_02_transport",
+          "category": "transport",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_03_transport",
+          "category": "transport",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_04_transport",
+          "category": "transport",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_05_transport",
+          "category": "transport",
+          "chars": 155
+        },
+        {
+          "chunk_id": "chunk_ljg_06_navigation",
+          "category": "navigation",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_07_navigation",
+          "category": "navigation",
+          "chars": 511
+        },
+        {
+          "chunk_id": "chunk_ljg_08_navigation",
+          "category": "navigation",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_09_navigation",
+          "category": "navigation",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_10_navigation",
+          "category": "navigation",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_11_navigation",
+          "category": "navigation",
+          "chars": 334
+        },
+        {
+          "chunk_id": "chunk_ljg_12_checkin",
+          "category": "checkin",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_13_checkin",
+          "category": "checkin",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_14_checkin",
+          "category": "checkin",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_15_checkin",
+          "category": "checkin",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_16_checkin",
+          "category": "checkin",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_17_checkin",
+          "category": "checkin",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_18_checkin",
+          "category": "checkin",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_19_checkin",
+          "category": "checkin",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_20_checkin",
+          "category": "checkin",
+          "chars": 511
+        },
+        {
+          "chunk_id": "chunk_ljg_21_checkin",
+          "category": "checkin",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_22_checkin",
+          "category": "checkin",
+          "chars": 206
+        },
+        {
+          "chunk_id": "chunk_ljg_23_facility",
+          "category": "facility",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_24_facility",
+          "category": "facility",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_25_facility",
+          "category": "facility",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_26_facility",
+          "category": "facility",
+          "chars": 116
+        },
+        {
+          "chunk_id": "chunk_ljg_27_lounge",
+          "category": "lounge",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_28_lounge",
+          "category": "lounge",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_29_lounge",
+          "category": "lounge",
+          "chars": 511
+        },
+        {
+          "chunk_id": "chunk_ljg_30_lounge",
+          "category": "lounge",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_31_lounge",
+          "category": "lounge",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_32_lounge",
+          "category": "lounge",
+          "chars": 511
+        },
+        {
+          "chunk_id": "chunk_ljg_33_lounge",
+          "category": "lounge",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_34_lounge",
+          "category": "lounge",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_35_lounge",
+          "category": "lounge",
+          "chars": 291
+        },
+        {
+          "chunk_id": "chunk_ljg_36_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_37_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_38_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_39_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_40_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_41_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_42_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_43_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_44_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_45_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_46_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_47_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_48_emergency",
+          "category": "emergency",
+          "chars": 512
+        },
+        {
+          "chunk_id": "chunk_ljg_49_emergency",
+          "category": "emergency",
+          "chars": 80
+        },
+        {
+          "chunk_id": "chunk_ljg_50_policy",
+          "category": "policy",
+          "chars": 320
+        }
+      ]
+    }
+  }
+}

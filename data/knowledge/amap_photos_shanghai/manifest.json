@@ -1,0 +1,83 @@
+[
+  {
+    "name": "上海科技馆",
+    "status": "0",
+    "info": "INVALID_USER_KEY",
+    "poi_name": null,
+    "photo_url": null,
+    "local_file": null,
+    "photo_count": 0
+  },
+  {
+    "name": "上海野生动物园",
+    "status": "0",
+    "info": "INVALID_USER_KEY",
+    "poi_name": null,
+    "photo_url": null,
+    "local_file": null,
+    "photo_count": 0
+  },
+  {
+    "name": "东方明珠广播电视塔",
+    "status": "0",
+    "info": "INVALID_USER_KEY",
+    "poi_name": null,
+    "photo_url": null,
+    "local_file": null,
+    "photo_count": 0
+  },
+  {
+    "name": "中国共产党一大•二大•四大纪念馆景区",
+    "status": "0",
+    "info": "INVALID_USER_KEY",
+    "poi_name": null,
+    "photo_url": null,
+    "local_file": null,
+    "photo_count": 0
+  },
+  {
+    "name": "外滩",
+    "status": "0",
+    "info": "INVALID_USER_KEY",
+    "poi_name": null,
+    "photo_url": null,
+    "local_file": null,
+    "photo_count": 0
+  },
+  {
+    "name": "西沙明珠湖景区",
+    "status": "0",
+    "info": "INVALID_USER_KEY",
+    "poi_name": null,
+    "photo_url": null,
+    "local_file": null,
+    "photo_count": 0
+  },
+  {
+    "name": "豫园",
+    "status": "0",
+    "info": "INVALID_USER_KEY",
+    "poi_name": null,
+    "photo_url": null,
+    "local_file": null,
+    "photo_count": 0
+  },
+  {
+    "name": "上海迪士尼度假区",
+    "status": "0",
+    "info": "INVALID_USER_KEY",
+    "poi_name": null,
+    "photo_url": null,
+    "local_file": null,
+    "photo_count": 0
+  },
+  {
+    "name": "朱家角古镇",
+    "status": "0",
+    "info": "INVALID_USER_KEY",
+    "poi_name": null,
+    "photo_url": null,
+    "local_file": null,
+    "photo_count": 0
+  }
+]
